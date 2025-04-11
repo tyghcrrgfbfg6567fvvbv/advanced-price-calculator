@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Calculator</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Price & Quantity Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="call.css">
 </head>
 <body>
   <div class="calculator-container">
@@ -15,10 +16,13 @@
         <label for="weight">Weight:</label>
         <div class="input-group">
           <input type="number" id="weight" placeholder="Enter weight" step="0.01" required>
-          <select id="weight-unit">
-            <option value="kg">kg</option>
-            <option value="grams">g</option>
-          </select>
+          <div class="custom-select" id="weight-unit">
+            <div class="select-trigger" tabindex="0">kg</div>
+            <ul class="select-options">
+              <li data-value="kg">kg</li>
+              <li data-value="grams">g</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -31,10 +35,13 @@
       <!-- Calculation Type -->
       <div class="form-group">
         <label for="calculation-type">Select Calculation:</label>
-        <select id="calculation-type">
-          <option value="price-per-quantity">Calculate Price (₹)</option>
-          <option value="quantity-per-price">Calculate Weight</option>
-        </select>
+        <div class="custom-select" id="calculation-type">
+          <div class="select-trigger" tabindex="0">Calculate Price (₹)</div>
+          <ul class="select-options">
+            <li data-value="price-per-quantity">Calculate Price (₹)</li>
+            <li data-value="quantity-per-price">Calculate Weight</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Input Value Section -->
@@ -42,11 +49,14 @@
         <label for="input-value">Enter Value:</label>
         <div class="input-group">
           <input type="number" id="input-value" placeholder="Enter value" step="0.01" required>
-          <select id="input-unit">
-            <option value="kg">kg</option>
-            <option value="grams">g</option>
-            <option value="price">₹</option>
-          </select>
+          <div class="custom-select" id="input-unit">
+            <div class="select-trigger" tabindex="0">kg</div>
+            <ul class="select-options">
+              <li data-value="kg">kg</li>
+              <li data-value="grams">g</li>
+              <li data-value="price">₹</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -57,7 +67,6 @@
     <!-- Output Section -->
     <div id="result" class="result-box"></div>
   </div>
-  <script src="script.js"></script>
+  <script src="call.js"></script>
 </body>
-          </html>
-  
+                                                           </html>
